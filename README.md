@@ -150,26 +150,7 @@ The thresholds can be adjusted in the code to match your own preference or room 
 
 ## Home Assistant and MQTT
 
-The `Binnenthermometer_1_1` version publishes the sensor values as a JSON message over MQTT.
-
-Example MQTT topic:
-
-```text
-matteman/binnenthermometer/kantoor/state
-```
-
-Example payload:
-
-```json
-{
-  "temperature": 21.6,
-  "humidity": 48,
-  "comfort": "Comfortable",
-  "display_on": true,
-  "wifi_rssi": -61
-}
-```
-
+The `Binnenthermometer_1_1` version publishes the sensor values as a message over MQTT.
 In Home Assistant, these values can be read using MQTT sensors with `value_template`.
 
 Example Home Assistant entities:
