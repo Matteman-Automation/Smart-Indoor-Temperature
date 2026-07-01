@@ -187,46 +187,23 @@ Example Home Assistant entities:
 ```yaml
 mqtt:
   sensor:
-    - name: "Office Temperature"
-      unique_id: "inside_temp_office_temperature"
-      state_topic: "matteman/binnenthermometer/kantoor/state"
-      value_template: "{{ value_json.temperature }}"
-      unit_of_measurement: "°C"
-      device_class: temperature
-      state_class: measurement
-
-    - name: "Office Humidity"
-      unique_id: "inside_temp_office_humidity"
-      state_topic: "matteman/binnenthermometer/kantoor/state"
-      value_template: "{{ value_json.humidity }}"
-      unit_of_measurement: "%"
-      device_class: humidity
-      state_class: measurement
-
-    - name: "Office Comfort Status"
-      unique_id: "inside_temp_office_comfort"
-      state_topic: "matteman/binnenthermometer/kantoor/state"
-      value_template: "{{ value_json.comfort }}"
-      icon: mdi:home-thermometer
-
-    - name: "Office WiFi Signal"
-      unique_id: "inside_temp_office_wifi_signal"
-      state_topic: "matteman/binnenthermometer/kantoor/state"
-      value_template: "{{ value_json.wifi_rssi }}"
+    - name: binnenthermometer kantoor rssi
+      unique_id: "binnenthermometer_kantoor_rssi"
+      state_topic: "binnenthermometer/kantoor/rssi"
       unit_of_measurement: "dBm"
-      device_class: signal_strength
-      state_class: measurement
-      entity_category: diagnostic
-
-  binary_sensor:
-    - name: "Office Display On"
-      unique_id: "inside_temp_office_display_on"
-      state_topic: "matteman/binnenthermometer/kantoor/state"
-      value_template: "{{ 'ON' if value_json.display_on else 'OFF' }}"
-      payload_on: "ON"
-      payload_off: "OFF"
-      device_class: light
-```
+      icon: mdi:wifi
+    
+    - name: binnenthermometer kantoor temperatuur
+      unique_id: "binnenthermometer_kantoor_temperatuur"
+      state_topic: "binnenthermometer/kantoor/temperatuur"
+      unit_of_measurement: "°C"
+      icon: mdi:thermometer
+    
+    - name: binnenthermometer_kantoor_vocht
+      unique_id: "binnenthermometer_kantoor_vocht"
+      state_topic: "binnenthermometer/kantoor/vocht"
+      unit_of_measurement: "%"
+      icon: mdi:water-percent
 
 ---
 
