@@ -630,6 +630,7 @@ void loop() {
 
     } else {
       Serial.println("*** ERROR *** Geen WiFi.");
+      ESP.restart();
     }
   }  
 }
